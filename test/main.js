@@ -6,7 +6,7 @@
 const _ = require('lodash');
 const $ = require('jquery');
 var esprima = require('esprima');
-const ml_compiled = require('../lib/js/test.js');
+const ml_compiled = require('../lib/js/src/test.js');
 
 function programEqual(fn1,fn2) {
 	if(typeof fn1 != 'function' || typeof fn2 != 'function') {

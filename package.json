@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "mkdir -p lib/js && ./node_modules/bs-platform/bin/bsc.exe -I lib/ocaml -c -bs-main lib/ocaml/jquery.ml -bs-package-name $npm_package_name -bs-package-output lib/js || true",
-    "compile_test": "mkdir -p lib/js && ./node_modules/bs-platform/bin/bsc.exe -I lib/ocaml -c -bs-main lib/ocaml/test.ml -bs-package-name $npm_package_name -bs-package-output lib/js && webpack test/main.js test/bundle.js"
+    "compile": "bsb",
+    "compile_test": "bsb && webpack test/main.js test/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,8 @@
   "devDependencies": {
     "bs-platform": "^1.0.3",
     "esprima": "^3.0.0",
-    "lodash": "^4.16.2"
+    "lodash": "^4.16.2",
+    "webpack": "^3.8.1"
   },
   "dependencies": {
     "jquery": "^3.1.0"
