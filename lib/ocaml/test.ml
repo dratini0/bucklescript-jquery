@@ -20,11 +20,10 @@ let css_test () =
 	Js.log h;
 	h##background #= "lightblue";
 	Js.log h;
-	el |> css' h;
+	ignore (el |> css_ h);
 	();; 
 
 let () =
 	attributes_raw ();
 	attributes_overloaded ();
-	append_test ();
 	css_test ();;

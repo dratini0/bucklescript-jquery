@@ -1,3 +1,10 @@
 .DS_Store
 node_modules
-
+lib/bs
+lib/es6
+lib/amdjs
+lib/js/lib
+lib/ocaml/*.cmi
+lib/ocaml/*.cmj
+lib/ocaml/*.cmt
+.merlin

@@ -1,0 +1,7 @@
+{
+    "$schema": "https://bucklescript.github.io/bucklescript/docson/build-schema.json",
+    "name": "bucklescript-jquery",
+    "sources": {
+        "dir": "lib/ocaml"
+    }
+}
