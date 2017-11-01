@@ -221,7 +221,7 @@ external append' : (string,'a Js.t) attr_func -> jquery = "append" [@@bs.send.pi
 external appendTo : jquery -> jquery = "appendTo" [@@bs.send.pipe: jquery]
 external appendTo' : (string,'a Js.t) attr_func -> jquery = "appendTo" [@@bs.send.pipe: jquery]
 external text_get : string = "text" [@@bs.send.pipe: jquery]
-external text : 'a Js.t -> jquery = "text" [@@bs.send.pipe: jquery]
+external text : string -> jquery = "text" [@@bs.send.pipe: jquery]
 external text' : (string,string) attr_func -> jquery = "text" [@@bs.send.pipe: jquery]
 
 (* Manipulation - DOM Insertion, Outside *)
