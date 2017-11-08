@@ -218,6 +218,7 @@ external wrapInner' : (jquery -> int -> 'a Js.t [@bs.this]) -> jquery = "wrapInn
 (* Manipulation - DOM Insertion, Inside *)
 external append : 'a Js.t -> jquery = "append" [@@bs.send.pipe: jquery]
 external append' : (string,'a Js.t) attr_func -> jquery = "append" [@@bs.send.pipe: jquery]
+external append_ : jquery -> jquery = "append" [@@bs.send.pipe: jquery]
 external appendTo : jquery -> jquery = "appendTo" [@@bs.send.pipe: jquery]
 external appendTo' : (string,'a Js.t) attr_func -> jquery = "appendTo" [@@bs.send.pipe: jquery]
 external text_get : string = "text" [@@bs.send.pipe: jquery]
