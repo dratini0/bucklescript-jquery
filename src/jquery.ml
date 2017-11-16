@@ -293,8 +293,8 @@ external unload : string -> jquery = "" [@@bs.send.pipe: jquery]
 
 (* Events - Event Handler Attachement *)
 external off : string -> jquery = "" [@@bs.send.pipe: jquery]
-external on : string -> (jquery -> 'a Js.t -> Js.boolean [@bs.this]) -> jquery = "" [@@bs.send.pipe: jquery]
-external on' : string -> string -> (jquery -> 'a Js.t -> Js.boolean [@bs.this]) -> jquery = "on" [@@bs.send.pipe: jquery]
+external on : string -> (Dom.node -> event -> Js.boolean [@bs.this]) -> jquery = "" [@@bs.send.pipe: jquery]
+external on' : string -> string -> (Dom.node -> event -> Js.boolean [@bs.this]) -> jquery = "on" [@@bs.send.pipe: jquery]
 external one : string -> jquery = "" [@@bs.send.pipe: jquery]
 external trigger : string -> jquery = "" [@@bs.send.pipe: jquery]
 external triggerHandler : string -> jquery = "" [@@bs.send.pipe: jquery]
@@ -307,6 +307,7 @@ external parent : jquery = "" [@@bs.send.pipe: jquery]
 external find : string -> jquery = "" [@@bs.send.pipe: jquery]
 
 external eq : int -> jquery = "" [@@bs.send.pipe: jquery]
+external index : int = "" [@@bs.send.pipe: jquery]
 
 (* Data *)
 external data_get : string -> string = "data" [@@bs.send.pipe: jquery]
