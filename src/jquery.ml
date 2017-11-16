@@ -10,6 +10,7 @@ type t;;
 external jquery : string -> jquery = "" [@@bs.module]
 external jquery_ : jquery =  "jquery" [@@bs.module]
 external jquery' : jquery -> jquery = "jquery" [@@bs.module]
+external jquery'' : Dom.node -> jquery = "jquery" [@@bs.module]
 
 (* Attributes *)
 external addClass : string -> jquery = "addClass" [@@bs.send.pipe: jquery]
@@ -224,6 +225,9 @@ external appendTo' : (string,'a Js.t) attr_func -> jquery = "appendTo" [@@bs.sen
 external text_get : string = "text" [@@bs.send.pipe: jquery]
 external text : string -> jquery = "text" [@@bs.send.pipe: jquery]
 external text' : (string,string) attr_func -> jquery = "text" [@@bs.send.pipe: jquery]
+external prepend : 'a Js.t -> jquery = "prepend" [@@bs.send.pipe: jquery]
+external prepend' : (string,'a Js.t) attr_func -> jquery = "prepend" [@@bs.send.pipe: jquery]
+external prepend_ : jquery -> jquery = "prepend" [@@bs.send.pipe: jquery]
 
 (* Manipulation - DOM Insertion, Outside *)
 external after : 'a Js.t -> jquery = "after" [@@bs.send.pipe: jquery]
@@ -298,8 +302,11 @@ external triggerHandler : string -> jquery = "" [@@bs.send.pipe: jquery]
 (* Tree Traversal *)
 
 external closest : string -> jquery = "" [@@bs.send.pipe: jquery]
+external parent : jquery = "" [@@bs.send.pipe: jquery]
 
 external find : string -> jquery = "" [@@bs.send.pipe: jquery]
+
+external eq : int -> jquery = "" [@@bs.send.pipe: jquery]
 
 (* Data *)
 external data_get : string -> string = "data" [@@bs.send.pipe: jquery]
