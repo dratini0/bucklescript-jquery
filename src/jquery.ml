@@ -309,6 +309,8 @@ external find : string -> jquery = "" [@@bs.send.pipe: jquery]
 external eq : int -> jquery = "" [@@bs.send.pipe: jquery]
 external index : int = "" [@@bs.send.pipe: jquery]
 
+external length : jquery -> int = "" [@@bs.get]
+
 (* Data *)
 external data_get : string -> string = "data" [@@bs.send.pipe: jquery]
 external data : string -> string -> jquery = "data" [@@bs.send.pipe: jquery]
