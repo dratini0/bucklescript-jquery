@@ -12,6 +12,8 @@ external jquery_ : jquery =  "jquery" [@@bs.module]
 external jquery' : jquery -> jquery = "jquery" [@@bs.module]
 external jquery'' : Dom.node -> jquery = "jquery" [@@bs.module]
 
+external toArray : Dom.node array = "" [@@bs.send.pipe: jquery]
+
 (* Attributes *)
 external addClass : string -> jquery = "addClass" [@@bs.send.pipe: jquery]
 external addClass' : (string,string) attr_func -> jquery = "addClass" [@@bs.send.pipe: jquery]
@@ -303,6 +305,7 @@ external triggerHandler : string -> jquery = "" [@@bs.send.pipe: jquery]
 
 external closest : string -> jquery = "" [@@bs.send.pipe: jquery]
 external parent : jquery = "" [@@bs.send.pipe: jquery]
+external children : jquery = "" [@@bs.send.pipe: jquery]
 
 external find : string -> jquery = "" [@@bs.send.pipe: jquery]
 
