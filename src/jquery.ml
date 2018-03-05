@@ -57,12 +57,12 @@ external prop : string -> string -> jquery = "prop" [@@bs.send.pipe: jquery]
 external prop_ : 'a Js.t -> jquery = "prop" [@@bs.send.pipe: jquery]
 external prop' : (string,string) attr_func -> jquery = "prop" [@@bs.send.pipe: jquery]
 
-let prop_get (type t) (k : string) : [`str of t | `bool of t | `error] =
+let prop_get (k : string) : [`str of string | `bool of bool | `error] =
 	let p = prop_get k in
-	let ty, v = Js.Types.reify_type p in
-	match (ty : t Js.Types.t) with
-	| Js.Types.String -> `str v
-	| Js.Types.Boolean -> `bool v
+	match (Js.Types.classify p) with
+	| Js.Types.JSString v -> `str v
+	| Js.Types.JSFalse -> `bool false
+	| Js.Types.JSTrue -> `bool true
 	| _ -> `error;;
 
 let prop at (jq : jquery) : jquery =
@@ -236,7 +236,7 @@ external after : 'a Js.t -> jquery = "after" [@@bs.send.pipe: jquery]
 external after' : (jquery -> int -> 'a Js.t [@bs.this]) -> jquery = "after" [@@bs.send.pipe: jquery]
 external after'' : (string,'a Js.t) attr_func -> jquery = "after" [@@bs.send.pipe: jquery]
 external before : 'a Js.t -> jquery = "before" [@@bs.send.pipe: jquery]
-external before'' : (jquery -> int -> 'a Js.t [@bs.this]) -> jquery = "before" [@@bs.send.pipe: jquery]
+external before' : (jquery -> int -> 'a Js.t [@bs.this]) -> jquery = "before" [@@bs.send.pipe: jquery]
 external before'' : (string,'a Js.t) attr_func -> jquery = "before" [@@bs.send.pipe: jquery]
 external insertAfter : 'a Js.t -> jquery = "" [@@bs.send.pipe: jquery]
 external insertBefore : 'a Js.t -> jquery = "" [@@bs.send.pipe: jquery]

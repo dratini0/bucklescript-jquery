@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/nebuta/bucklescript-jquery",
   "devDependencies": {
-    "bs-platform": "^1.0.3",
+    "bs-platform": "^2.2.2",
     "esprima": "^3.0.0",
     "lodash": "^4.16.2",
     "webpack": "^3.8.1"

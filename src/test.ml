@@ -5,7 +5,7 @@ external js_assert : Js.boolean -> unit = "assert" [@@bs.val]
 let attributes_raw () =
 	let el = jquery "#container" in
 	ignore (el |> addClass (`str "test"));
-	ignore (el |> addClass' (fun [@bs.this] jq i s  -> s^"-list"));
+	ignore (el |> addClass' (fun [@bs.this] _ _ s  -> s^"-list"));
 	();;
 
 let attributes_overloaded () =

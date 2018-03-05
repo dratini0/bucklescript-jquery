@@ -1,1 +1,1 @@
-./node_modules/bs-platform/bin/bsb.exe
+$(npm bin)/bsb -make-world

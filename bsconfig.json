@@ -3,5 +3,6 @@
     "name": "bucklescript-jquery",
     "sources": {
         "dir": "src"
-    }
+    },
+    "refmt": 3
 }
