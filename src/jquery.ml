@@ -314,6 +314,8 @@ external index : int = "" [@@bs.send.pipe: jquery]
 
 external length : jquery -> int = "" [@@bs.get]
 
+external is : string -> bool = "" [@@bs.send.pipe: jquery]
+
 (* Data *)
 external data_get : string -> string = "data" [@@bs.send.pipe: jquery]
 external data : string -> string -> jquery = "data" [@@bs.send.pipe: jquery]
